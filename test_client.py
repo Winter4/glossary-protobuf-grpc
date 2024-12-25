@@ -2,7 +2,7 @@ import grpc
 import glossary_pb2
 import glossary_pb2_grpc
 
-def run():
+def run_tests():
     with grpc.insecure_channel('localhost:50051') as channel:
         stub = glossary_pb2_grpc.GlossaryServiceStub(channel)
 
@@ -24,4 +24,4 @@ def run():
         print(response.message)
 
 if __name__ == '__main__':
-    run()
+    run_tests()
